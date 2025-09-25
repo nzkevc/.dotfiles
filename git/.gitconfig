@@ -1,0 +1,14 @@
+[user]
+	name = Kevin Cheung
+	email = 48199865+nzkevc@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[core]
+	editor = nvim
+# [filter "lfs"]
+#	clean = git-lfs clean -- %f
+#	smudge = git-lfs smudge -- %f
+#	process = git-lfs filter-process
+#	required = true
