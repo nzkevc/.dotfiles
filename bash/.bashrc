@@ -25,3 +25,4 @@ fi
 export PATH
 
 eval "$(zoxide init --cmd cd bash)"
+eval "$(mise activate bash --shims)"
