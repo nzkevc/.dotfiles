@@ -26,3 +26,7 @@ export PATH
 
 eval "$(zoxide init --cmd cd bash)"
 eval "$(mise activate bash --shims)"
+
+eval "$(ssh-agent -s)"
+ssh-add "$HOME/.ssh/id_ed25519_personal"
+
