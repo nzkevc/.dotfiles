@@ -28,6 +28,10 @@ fi
 export PATH
 
 
+# History config
+HISTCONTROL=ignoreboth:erasedups
+
+
 # Prompt
 . ~/.git-prompt.sh
 export GIT_PS1_SHOWCOLORHINTS=true
