@@ -1,5 +1,7 @@
 [tools]
 java = "temurin-21"
 node = "22"
+"npm:nb.sh" = "latest"
 pnpm = "latest"
+rust = "latest"
 usage = "latest"
