@@ -29,7 +29,10 @@ export PATH
 
 
 # History config
-HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+shopt -s histappend
 
 
 # Prompt
