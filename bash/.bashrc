@@ -54,6 +54,5 @@ ssh-add "$HOME/.ssh/id_ed25519_personal" > /dev/null 2>&1
 
 
 # Tool activation
+eval "$(mise activate bash)"
 eval "$(zoxide init --cmd cd bash)"
-eval "$(mise activate bash --shims)"
-
