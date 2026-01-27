@@ -7,6 +7,8 @@
 	ui = auto
 [core]
 	editor = nvim
+[alias]
+	ll = "log --oneline --graph --decorate"
 # [filter "lfs"]
 #	clean = git-lfs clean -- %f
 #	smudge = git-lfs smudge -- %f
