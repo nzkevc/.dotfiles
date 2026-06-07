@@ -42,10 +42,16 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUPSTREAM="auto"
-RED='\e[31m'
-CYAN='\e[36m'
-RESET='\e[0m'
+RED='\[\e[31m\]'
+CYAN='\[\e[36m\]'
+RESET='\[\e[0m\]'
 PROMPT_COMMAND="__git_ps1 '${CYAN}\u@\h: ${RED}\W${RESET}' ' \\$ '"
+PROMPT_COMMAND=(
+  "history -a"
+  "history -c"
+  "history -r"
+  "__git_ps1 '${CYAN}\u@\h: ${RED}\W${RESET}' ' \\$ '"
+)
 
 
 # SSH-agent
@@ -54,5 +60,6 @@ ssh-add "$HOME/.ssh/id_ed25519_personal" > /dev/null 2>&1
 
 
 # Tool activation
+eval "$(fzf --bash)"
 eval "$(mise activate bash)"
 eval "$(zoxide init --cmd cd bash)"
