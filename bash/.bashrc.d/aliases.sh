@@ -12,3 +12,5 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
+
+alias t='nvim ~/Documents/Sync/Note.md'
