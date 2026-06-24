@@ -13,4 +13,4 @@ alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
 
-alias t='nvim ~/Documents/Sync/Note.md'
+alias t='nvim ~/Documents/Vault/Note.md'
