@@ -45,11 +45,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 RED='\[\e[31m\]'
 CYAN='\[\e[36m\]'
 RESET='\[\e[0m\]'
-PROMPT_COMMAND="__git_ps1 '${CYAN}\u@\h: ${RED}\W${RESET}' ' \\$ '"
 PROMPT_COMMAND=(
-  "history -a"
-  "history -c"
-  "history -r"
   "__git_ps1 '${CYAN}\u@\h: ${RED}\W${RESET}' ' \\$ '"
 )
 
