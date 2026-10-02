@@ -46,11 +46,22 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUPSTREAM="auto"
-RED='\[\e[31m\]'
-CYAN='\[\e[36m\]'
+
+# CYAN='\[\e[36m\]'
+# RED='\[\e[31m\]'
+NLIGHTBLUE="\[\e[38;2;166;219;255m\]"    #A6DBFF
+NLIGHTGREEN="\[\e[38;2;180;246;192m\]"   #B4F6C0
+NLIGHTCYAN="\[\e[38;2;140;248;247m\]"    #8CF8F7
+NLIGHTMAGENTA="\[\e[38;2;255;202;255m\]" #FFCAFF
+NLIGHTRED="\[\e[38;2;255;192;185m\]"     #FFC0B9
+NLIGHTYELLOW="\[\e[38;2;252;224;148m\]"  #FCE094
+NLIGHTGREY="\[\e[38;2;238;241;248m\]"    #EEF1F8
+NLIGHTGREY2="\[\e[38;2;224;226;234m\]"   #E0E2EA
+NLIGHTGREY3="\[\e[38;2;196;198;205m\]"   #C4C6CD
+
 RESET='\[\e[0m\]'
 PROMPT_COMMAND=(
-  "__git_ps1 '${CYAN}\u@\h: ${RED}\W${RESET}' ' \\$ '"
+  "__git_ps1 '${NLIGHTBLUE}\u@\h: ${NLIGHTYELLOW}\W${RESET}' ' \\$ '"
 )
 
 
