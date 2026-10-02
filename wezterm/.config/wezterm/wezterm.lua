@@ -18,9 +18,9 @@ config.keys = {
 config.tab_and_split_indices_are_zero_based = true
 config.window_background_opacity = 0.8
 
-wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():maximize()
-end)
+-- wezterm.on("gui-startup", function(cmd)
+-- 	local tab, pane, window = mux.spawn_window(cmd or {})
+-- 	window:gui_window():maximize()
+-- end)
 
 return config
