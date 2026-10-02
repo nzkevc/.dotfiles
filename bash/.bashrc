@@ -28,6 +28,10 @@ fi
 export PATH
 
 
+# Docker stuff
+export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+
+
 # History config
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=10000
