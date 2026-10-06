@@ -1,13 +1,24 @@
--- Set background of Normal text to none (transparent)
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' }) -- For floating windows
--- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' }) -- For borders of floating windows
--- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })       -- For popup menus
--- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })  -- For the sign column (e.g., git signs)
--- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })      -- For line numbers
+local plug_path = vim.fn.stdpath('data') .. '/site/autoload/plug.vim'
+if vim.fn.empty(vim.fn.glob(plug_path)) == 1 then
+  vim.fn.system({ 'curl', '-fLo', plug_path, '--create-dirs',
+    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' })
+  vim.cmd('autocmd VimEnter * PlugInstall --sync | source $MYVIMRC')
+end
 
+local vim = vim
+local Plug = vim.fn['plug#']
 
--- Set fold method (use zf, zo, zc)
-vim.opt.foldmethod = 'marker'
-vim.opt.foldlevel = 0
+vim.loader.enable()
 
+vim.call('plug#begin')
+Plug('nvim-treesitter/nvim-treesitter', {
+  ['do'] = ':TSUpdate',
+})
+Plug('rose-pine/neovim', { ['as'] = 'rose-pine' })
+vim.call('plug#end')
+
+require('autocmd')
+require('mappings')
+require('options')
+require('plugins.treesitter')
+require('plugins.rose-pine')
