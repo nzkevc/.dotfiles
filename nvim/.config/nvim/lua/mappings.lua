@@ -20,7 +20,7 @@ map("n", "<leader>nn", function()
 	end
 end)
 
--- force cs -> c_sharp mapping
+-- force filetype -> parser mapping
 vim.filetype.add({
   extension = {
     cs = "c_sharp",

@@ -21,28 +21,15 @@ local parsers = {
   "yaml",
 }
 
-treesitter.setup({
-  highlight = {
-    enable = true,
-  },
-})
-
 treesitter.install(parsers)
 
-local filetypes = vim.iter(parsers)
-  :filter(function(parser)
-    return parser ~= "markdown_inline"
-  end)
-  :map(vim.treesitter.language.get_filetypes)
-  :flatten()
-  :unique()
-  :totable()
-
+-- force mismatched filetype -> parser mappings in mappings.lua if needed
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = filetypes,
+  pattern = parsers,
   callback = function(args)
     vim.treesitter.start(args.buf)
-    vim.bo[args.buf].indentexpr =
-      "v:lua.require'nvim-treesitter'.indentexpr()"
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    -- vim.wo.foldmethod = 'expr'
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
